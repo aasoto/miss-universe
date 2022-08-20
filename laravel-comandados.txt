@@ -1,0 +1,65 @@
+//crear proyecto en laravel
+composer create-project laravel/laravel example-app
+
+//ver todos los comandos de artisan
+php artisan
+
+/******** MIGRACIONES **********/
+//migrar todas las tablas existentes
+php artisan migrate
+
+//crear nueva migración
+php artisan make:migration create_posts_table
+
+//borrar todas las migraciones
+php artisan migrate:rollback
+
+//borrar las dos últimas migraciones
+php artisan migrate:rollback --step=2
+
+//borrar y crear de nuevo todas las migraciones (eliminar toda slas tablas y los datos y los vuelve a crear de nuevo
+php artisan migrate:refresh
+
+/************* CONTROLADORES *************/
+//crear controlador en blanco
+php artisan make:controller PostsController
+
+//crear controlador tipo API
+php artisan make:controller PostsController --api
+//contiene las funciones:
+	/*index ()
+	 *store (Request $request)
+	 *show ($id)
+	 *update (Request $request, $id)
+	 *destroy ($id)
+
+//crear controlador tipo resource
+php artisan make:controller PostsController --resource
+php artisan make:controller PostsController -r
+//contiene las funciones:
+	/*index ()
+	 *create ()
+	 *store (Request $request)
+	 *show ($id)
+	 *edit ($id)
+	 *update (Request $request, $id)
+	 *destroy ($id)
+
+//crear controlador en carpeta
+php artisan make:controller Dashboard/PostsController --resource
+
+//crear controlador y modelo al mismo tiempo
+php artisan make:controller PostController -r -m Post
+php artisan make:controller Dashboard/PostController -r -m Post
+
+/*********** MODELOS *************/
+//crear nuevo modelo
+php artisan make:model Posts
+
+/************ RUTAS *************/
+//listar rutas
+php artisan route:list
+
+/************ VALIDACIÓN *********/
+//crear nuevo request {{nombre del modelo}}/{{nombre de la función o metodo}}
+php artisan make:request Post/StoreRequest
