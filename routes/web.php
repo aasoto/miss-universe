@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\CandidateController;
 use App\Http\Controllers\Dashboard\NationalCommitteeController;
+use App\Http\Controllers\Dashboard\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::resource('candidates', CandidateController::class);
 Route::resource('nationalcommittees', NationalCommitteeController::class);
+Route::resource('news', NewsController::class);

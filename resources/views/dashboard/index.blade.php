@@ -8,4 +8,7 @@
 <a href="{{ route('nationalcommittees.index') }}">
     <button>Comités Nacionales</button>
 </a>
+<a href="{{ route('news.index') }}">
+    <button>Noticias</button>
+</a>
 @endsection

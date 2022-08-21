@@ -1,0 +1,22 @@
+@extends('dashboard.layout')
+@section('content')
+    <h1>Mostrar noticia</h1>
+    <table>
+        <tr>
+            <td><b>Título</b></td>
+            <td>{{$news->title}}</td>
+        </tr>
+        <tr>
+            <td><b>Slug</b></td>
+            <td>{{$news->slug}}</td>
+        </tr>
+        <tr>
+            <td><b>Subtitulo</b></td>
+            <td>{{$news->subtitle}}</td>
+        </tr>
+        <tr>
+            <td><b>Contenido</b></td>
+            <td>{{$news->content}}</td>
+        </tr>
+    </table>
+@endsection
