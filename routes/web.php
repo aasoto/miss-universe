@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\CandidateController;
+use App\Http\Controllers\Dashboard\NationalCommitteeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+Route::get('/', function () {
+    return view('dashboard.index');
+});
 
 Route::resource('candidates', CandidateController::class);
+Route::resource('nationalcommittees', NationalCommitteeController::class);
