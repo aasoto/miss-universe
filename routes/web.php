@@ -17,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard.index');
+    return view('welcome');
 });
 
-Route::resource('candidates', CandidateController::class);
-Route::resource('nationalcommittees', NationalCommitteeController::class);
-Route::resource('news', NewsController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::resource('candidates', CandidateController::class)->middleware(['auth']);
+Route::resource('nationalcommittees', NationalCommitteeController::class)->middleware(['auth']);
+Route::resource('news', NewsController::class)->middleware(['auth']);
+
+require __DIR__.'/auth.php';

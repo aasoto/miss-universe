@@ -1,10 +1,24 @@
 @extends('dashboard.layout')
 
 @section('content')
-@include('dashboard.fragment._errors-form')
-<h1>Actualizar candidata {{$candidate->first_name.' '.$candidate->second_name.' '.$candidate->first_last_name.' '.$candidate->second_last_name}}</h1>
-<form action="{{ route('candidates.update', $candidate->id) }}" method="post" enctype="multipart/form-data">
+<br>
+<form class="form-grid" action="{{ route('candidates.update', $candidate->id) }}" method="post" enctype="multipart/form-data">
     @method('PUT')
-    @include('dashboard.candidates._form')
+    <div class="card-float">
+        <div class="card">
+            <div class="card-header-warning">
+                <h5>Actualizar candidata</h5>
+            </div>
+            <div class="card-body">
+                <div class="errors-form">
+                    @include('dashboard.fragment._errors-form')
+                </div>
+                @include('dashboard.candidates._form')
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-warning" type="submit">Guardar</button>
+            </div>
+        </div>
+    </div>
 </form>
 @endsection

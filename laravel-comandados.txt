@@ -63,3 +63,26 @@ php artisan route:list
 /************ VALIDACIÓN *********/
 //crear nuevo request {{nombre del modelo}}/{{nombre de la función o metodo}}
 php artisan make:request Post/StoreRequest
+
+/************ AUTENTICACIÓN ******************/
+//Laravel Breeze es para la autenticación.
+//Instalar laravel breeze
+composer require laravel/breeze --dev
+php artisan breeze:install
+ 
+php artisan migrate
+npm install
+npm run dev
+
+/** npm run watch ----> num run dev **/
+
+//instalar vue
+npm install vue@next vue-loader@next
+//instalar conector de vue con vite
+npm i @vitejs/plugin-vue
+//configurar las dependencias en vite.config.js
+import vue from '@vitejs/plugin-vue';
+//incluir función en el apartado de pluggins
+vue(),
+//despues de todo lo anterior ejecutar
+npm run dev
