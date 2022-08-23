@@ -24,8 +24,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('candidates', CandidateController::class)->middleware(['auth']);
-Route::resource('nationalcommittees', NationalCommitteeController::class)->middleware(['auth']);
+Route::resource('candidates', CandidateController::class)->middleware(['auth', 'admin']);
+Route::resource('nationalcommittees', NationalCommitteeController::class)->middleware(['auth', 'admin']);
 Route::resource('news', NewsController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

@@ -86,3 +86,13 @@ import vue from '@vitejs/plugin-vue';
 vue(),
 //despues de todo lo anterior ejecutar
 npm run dev
+
+/************** AUTENTICACIÓN DE ROLES - CREAR MIDDLEWARE DE PROTECCIÓN **********/
+//crear nuevo middleware
+php artisan make:middleware UserAccessDashboardMiddleware
+
+//se crea una función llamaba isAdmin en el modelo de User 
+//lo siguiente es registrarlo en el app/http/kernel para registrar el middleware en la parte de $routeMiddleware
+//se le coloca nombre a la instancia, ej:
+'admin' => \App\Http\Middleware\UserAccessDashboardMiddleware::class,
+//y al final se pone en el archivo web.php de routes en nombre de admin en la parte de middleware
