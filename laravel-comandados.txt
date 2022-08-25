@@ -96,3 +96,10 @@ php artisan make:middleware UserAccessDashboardMiddleware
 //se le coloca nombre a la instancia, ej:
 'admin' => \App\Http\Middleware\UserAccessDashboardMiddleware::class,
 //y al final se pone en el archivo web.php de routes en nombre de admin en la parte de middleware
+
+/********** COMPONENTES ***********/
+//crear componente anonimo
+php artisan make:component web.blog.post.index
+
+//crear componente con clase
+php artisan make:component web/blog/post/Index

@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+    <title>Miss Universe - Dashboard</title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Nucleo Icons -->
+    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <!-- Main Styling -->
+    <link href="./assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
+    @vite(['resources/css/fontawesome-free/css/fontawesome.css', 'resources/css/app.css', 'resources/js/app.js'])
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    Miss Universo
-                </div>
-            </header>
-            @if (session('status'))
-                {{session('status')}}
-                <br>
-            @endif
-            <div class="content">
-                <div class="container mx-auto">
-                    @yield('content')
-                </div>
+<body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+    @include('dashboard.fragment.sidebar')
+    <input type="hidden" name="alternative" id="alternative" value="0">
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+        @include('dashboard.fragment.navegation')
+        <div class="content">
+            <div class="container mx-auto">
+                @yield('content')
             </div>
         </div>
-    </body>
+    </main>
+
+</body>
+<!-- plugin for charts  -->
+<script src="./assets/js/plugins/chartjs.min.js" async></script>
+<!-- plugin for scrollbar  -->
+<script src="./assets/js/plugins/perfect-scrollbar.min.js" async></script>
+<!-- github button -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- main script file  -->
+<script src="./assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
+
 </html>

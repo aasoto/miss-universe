@@ -79,7 +79,8 @@ class CandidateController extends Controller
     {
         $countries = Country::pluck('id', 'name');
         $national_committees = NationalCommittee::pluck('id', 'business_name');
-        return view('dashboard.candidates.edit', compact('candidate', 'countries', 'national_committees'));
+        $edit = "1";
+        return view('dashboard.candidates.edit', compact('candidate', 'countries', 'national_committees', 'edit'));
     }
 
     /**
