@@ -30,11 +30,12 @@
     <input type="hidden" name="alternative" id="alternative" value="0">
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
         @include('dashboard.fragment.navegation')
-        <div class="content">
+        @yield('content')
+        {{--<div class="content">
             <div class="container mx-auto">
                 @yield('content')
             </div>
-        </div>
+        </div>--}}
     </main>
 
 </body>
