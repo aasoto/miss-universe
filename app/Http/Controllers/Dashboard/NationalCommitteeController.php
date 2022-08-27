@@ -55,7 +55,7 @@ class NationalCommitteeController extends Controller
      */
     public function show(NationalCommittee $nationalcommittee)
     {
-        $countries = Country::pluck('id', 'name');
+        $countries = Country::get();
         return view('dashboard.nationalcommittees.show', compact('countries', 'nationalcommittee'));
     }
 
@@ -68,7 +68,8 @@ class NationalCommitteeController extends Controller
     public function edit(NationalCommittee $nationalcommittee)
     {
         $countries = Country::pluck('id', 'name');
-        return view('dashboard.nationalcommittees.edit', compact('nationalcommittee', 'countries'));
+        $edit = "1";
+        return view('dashboard.nationalcommittees.edit', compact('nationalcommittee', 'countries', 'edit'));
     }
 
     /**

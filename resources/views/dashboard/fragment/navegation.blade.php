@@ -22,7 +22,7 @@
                             </span>
                             <input type="text"
                                 class="pl-8.75 text-sm focus:shadow-soft-primary-outline ease-soft w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
-                                placeholder="     Type here..." />
+                                placeholder="Buscar aquí..." />
                         </div>
                     </div>
                     <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
@@ -41,12 +41,22 @@
                                         <x-dropdown-link :href="route('logout')"
                                             onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                            {{ __('Log Out') }}
+                                            {{ __('Cerrar sesión') }}
                                         </x-dropdown-link>
                                     </form>
                                 </span>
                             </div>
                         </li>
+
+                        <li class="flex items-center pl-4 xl:hidden">
+                            <a href="javascript:;" class="block p-0 transition-all ease-nav-brand text-sm text-slate-500" sidenav-trigger>
+                              <div class="w-4.5 overflow-hidden">
+                                <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-slate-500 transition-all"></i>
+                                <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-slate-500 transition-all"></i>
+                                <i class="ease-soft relative block h-0.5 rounded-sm bg-slate-500 transition-all"></i>
+                              </div>
+                            </a>
+                          </li>
                     </ul>
                 </div>
             </div>

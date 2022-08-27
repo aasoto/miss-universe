@@ -64,7 +64,7 @@ class CandidateController extends Controller
      */
     public function show(Candidate $candidate)
     {
-        $countries = Country::pluck('id', 'name');
+        $countries = Country::get();
         $national_committees = NationalCommittee::pluck('id', 'business_name');
         return view('dashboard.candidates.show', compact('candidate', 'countries', 'national_committees'));
     }

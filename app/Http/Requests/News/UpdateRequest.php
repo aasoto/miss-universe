@@ -26,7 +26,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             "title" => "required|max:200|regex:/^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/i",
-            "slug" => "required|min:5|max:200|unique:news,slug,".$this->route("news")->id,
+            "slug" => "min:5|max:200|unique:news,slug,".$this->route("news")->id,
             "subtitle" => "required|min:5|max:200",
             "content" => "required|min:7"
         ];

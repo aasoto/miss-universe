@@ -17,9 +17,11 @@
     <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <!-- Flag icons -->
+    <link href="../node_modules/flag-icons/css/flag-icons.min.css" rel="stylesheet" />
     <!-- Main Styling -->
     <link href="./assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
-    @vite(['resources/css/fontawesome-free/css/fontawesome.css', 'resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/fontawesome-free/css/fontawesome.css', 'resources/js/app.js'])
 
 </head>
 

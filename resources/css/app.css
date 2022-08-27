@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/***************** TABLAS **********************/
+/*
 
 .table {
     @apply table-auto w-full
@@ -41,13 +41,7 @@
 .table-striped tfoot {
     @apply bg-gray-200 text-center uppercase leading-4 tracking-widest
 }
-/***************** fin TABLAS **********************/
 
-/************************* CONTAINER **************************/
-
-/************************* fin CONTAINER **************************/
-
-/*********************** COLUMN ********************/
 .column-2 {
     @apply flex flex-row flex-wrap flex-grow mt-2
 }
@@ -57,9 +51,6 @@
 .column-4 {
     @apply flex flex-row flex-wrap flex-grow mt-4
 }
-/*********************** fin COLUMN ********************/
-
-/*********************** CARDS ********************/
 .card-float {
     @apply w-full p-3
 }
@@ -87,9 +78,6 @@
 .card-footer {
     @apply border-b p-3 font-bold uppercase text-black
 }
-/*********************** fin CARDS ********************/
-
-/***************** FORMULARIOS **********************/
 .form-grid form {
     @apply w-full max-w-lg
 }
@@ -114,9 +102,6 @@
 .form-grid textarea {
     @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500
 }
-/***************** fin FORMULARIOS **********************/
-
- /************************* BOTONES **************************/
 .btn {
     @apply border rounded px-3 py-2 text-white font-bold block
 }
@@ -132,7 +117,6 @@
 .btn-warning {
     @apply bg-yellow-400 hover:bg-yellow-800 border-yellow-600 text-black
 }
- /************************* fin BOTONES **************************/
 
-
+*/
 

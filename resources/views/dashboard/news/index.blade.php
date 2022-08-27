@@ -1,6 +1,43 @@
 @extends('dashboard.layout')
 @section('content')
-<br>
+<div class="mx-4">
+    <a href="{{ route('news.create') }}"
+        class="inline-block w-64 px-6 py-3 my-4 font-bold text-center text-white uppercase align-middle transition-all ease-in border-0 rounded-lg select-none shadow-soft-md bg-150 bg-x-25 leading-pro text-xs bg-gradient-to-tl from-purple-700 to-pink-500 hover:shadow-soft-2xl hover:scale-102">
+        Ingresar nueva noticia</a>
+</div>
+<div class="flex-none w-full max-w-full px-3 mt-6">
+    <div
+        class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+        <div class="p-4 pb-0 mb-0 bg-white rounded-t-2xl">
+            <h6 class="mb-1">Gestión de noticias</h6>
+            <p class="leading-normal text-sm">Listado general</p>
+        </div>
+        <div class="flex-auto px-0 pt-0 pb-2">
+            <div class="p-0 overflow-x-auto">
+                <x-table>
+                    <thead class="align-bottom">
+                        <tr>
+                            <x-table-title>Acciones</x-table-title>
+                            <x-table-title>Título</x-table-title>
+                            <x-table-title>Subtitulo</x-table-title>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($news as $n)
+                            <tr>
+                                <x-table-cell action="1af6JyE690-1" news="{{ $n->id }}" />
+                                <x-table-cell title_news="{{ $n->title }}"/>
+                                <x-table-cell subtitle_news="{{ $n->subtitle }}" />
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </x-table>
+                {{ $news->links() }}
+            </div>
+        </div>
+    </div>
+</div>
+{{--<br>
 <div class="card">
     <div class="card-header-primary">
         <h5>Listado de noticias</h5>
@@ -57,9 +94,8 @@
                 </tr>
             </tfoot>
         </table>
-        {{-- Sirve para colocar el pie de página --}}
         {{ $news->links() }}
     </div>
-</div>
+</div>--}}
 
 @endsection

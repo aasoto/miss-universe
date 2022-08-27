@@ -18,12 +18,16 @@
     <!-- Nucleo Icons -->
     <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
+
+    <link href="../../../node_modules/flag-icons/css/flag-icons.min.css" rel="stylesheet" />
     <!-- Main Styling -->
     <link href="../../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
     @else
     <!-- Nucleo Icons -->
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+
+    <link href="../../node_modules/flag-icons/css/flag-icons.min.css" rel="stylesheet" />
     <!-- Main Styling -->
     <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
     @endif
