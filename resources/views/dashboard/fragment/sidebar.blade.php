@@ -11,6 +11,8 @@
 
         <x-option-sidebar title="Noticias" icon="fas fa-newspaper">news.index</x-option-sidebar>
 
+        <x-option-sidebar title="Carrusel" icon="fas fa-images">carrousel.index</x-option-sidebar>
+
     </x-body-sidebar>
 </x-aside>
 

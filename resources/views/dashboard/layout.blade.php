@@ -21,22 +21,33 @@
     <link href="../node_modules/flag-icons/css/flag-icons.min.css" rel="stylesheet" />
     <!-- Main Styling -->
     <link href="./assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
+    @if (url()->current() == "http://localhost/miss-universe/public/carrousel")
+    <link href="./assets/css/carousel.css" rel="stylesheet" />
+    @endif
     @vite(['resources/css/fontawesome-free/css/fontawesome.css', 'resources/js/app.js'])
 
 </head>
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
-    @include('dashboard.fragment.sidebar')
-    <input type="hidden" name="alternative" id="alternative" value="0">
-    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
-        @include('dashboard.fragment.navegation')
-        @yield('content')
-        {{--<div class="content">
-            <div class="container mx-auto">
+    @if (Route::has('login'))
+        @auth
+            @include('dashboard.fragment.sidebar')
+            <input type="hidden" name="alternative" id="alternative" value="0">
+            <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+                @include('dashboard.fragment.navegation')
                 @yield('content')
-            </div>
-        </div>--}}
-    </main>
+                {{--<div class="content">
+                    <div class="container mx-auto">
+                        @yield('content')
+                    </div>
+                </div>--}}
+            </main>
+        @endauth
+    @else
+        @php
+            redirect ('/');
+        @endphp
+    @endif
 
 </body>
 <!-- plugin for charts  -->
@@ -46,6 +57,10 @@
 <!-- github button -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- main script file  -->
+<script src="./assets/js/jquery.js"></script>
+@if (url()->current() == "http://localhost/miss-universe/public/carrousel")
+<script src="./assets/js/bootstrap.min.js"></script>
+@endif
 <script src="./assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
 
 </html>

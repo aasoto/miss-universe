@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\CandidateController;
+use App\Http\Controllers\Dashboard\CarrouselController;
 use App\Http\Controllers\Dashboard\NationalCommitteeController;
 use App\Http\Controllers\Dashboard\NewsController;
 use App\Http\Controllers\Web\BlogNewsController;
@@ -26,6 +27,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('candidates', CandidateController::class)->middleware(['auth', 'admin']);
+Route::resource('carrousel', CarrouselController::class)->middleware(['auth', 'admin']);
 Route::resource('nationalcommittees', NationalCommitteeController::class)->middleware(['auth', 'admin']);
 Route::resource('news', NewsController::class)->middleware(['auth']);
 
