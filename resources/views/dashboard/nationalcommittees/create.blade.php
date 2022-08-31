@@ -1,6 +1,5 @@
 @extends('dashboard.alternative-layout')
 @section('content')
-@include('dashboard.fragment._errors-form')
 <input type="hidden" name="alternative" id="alternative" value="1">
 <section class="min-h-screen mb-32">
     <div class="relative flex items-start pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl"

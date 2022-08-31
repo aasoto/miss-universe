@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests\NationalCommittee;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 
 class UpdateRequest extends FormRequest
 {
@@ -14,6 +17,14 @@ class UpdateRequest extends FormRequest
     public function authorize()
     {
         return true;
+    }
+
+    function failedValidation(Validator $validator)
+    {
+        if ($this->expectsJson()) {
+            $response = new Response($validator->errors(), 422);
+            throw new ValidationException($validator, $response);
+        }
     }
 
     /**
